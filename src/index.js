@@ -1,13 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { PublicLayout } from './layouts/PublicLayout';
+import { IframePage } from './pages/IframePage';
+import { SheetJsPage } from './pages/SheetJsPage';
+import { FileViewerPage } from './pages/FileViewerPage';
+import { DocxJsPage } from './pages/DocxJsPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <PublicLayout />,
+    children: [
+      {
+        path: 'iframe',
+        element: <IframePage />
+      },
+      {
+        path: 'xlsx',
+        element: <SheetJsPage />
+      },
+      {
+        path: 'file-viewer',
+        element: <FileViewerPage />
+      },
+      {
+        path: 'docx-js',
+        element: <DocxJsPage />
+      },
+      {
+        index: true,
+        element: <Navigate to="/iframe" replace />
+      }
+    ]
+  },
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider  router={router} />
   </React.StrictMode>
 );
 
