@@ -5,7 +5,7 @@ export function PublicLayout() {
   return (
     <>
       <NavBar />
-      <div className="container-fluid">
+      <div className="container">
         <Outlet />
       </div>
     </>

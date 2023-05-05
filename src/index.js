@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+import '@pdftron/webviewer/public/ui/style.css';
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -10,6 +11,7 @@ import { IframePage } from './pages/IframePage';
 import { SheetJsPage } from './pages/SheetJsPage';
 import { FileViewerPage } from './pages/FileViewerPage';
 import { DocxJsPage } from './pages/DocxJsPage';
+import { AprysePage } from './pages/AprysePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: 'docx-js',
         element: <DocxJsPage />
+      },
+      {
+        path: 'apryse',
+        element: <AprysePage />
       },
       {
         index: true,

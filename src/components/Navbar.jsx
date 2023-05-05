@@ -10,6 +10,7 @@ export function NavBar() {
             <Link to={`xlsx`} className="nav-link">SheetJs</Link>
             <Link to={`file-viewer`} className="nav-link">File Viewer</Link>
             <Link to={`docx-js`} className="nav-link">Docx Js</Link>
+            <Link to={`apryse`} className="nav-link">Apryse</Link>
           </div>
         </div>
       </div>
